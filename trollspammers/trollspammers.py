@@ -50,7 +50,7 @@ while True:
        
     print("POST Request made.")
     print(r.status_code, r.reason)
-    print("\nFails: " + failc + "\n")
+    print("\nFails: " + str(failc) + "\n")
     randsleep = random.uniform(0.3, 3.5)
     print("Sleep for " + str(randsleep) + "\n")
     time.sleep(randsleep)
