@@ -46,6 +46,6 @@ while True:
     print("POST Request made.")
     print(r.status_code, r.reason)
     print("\n")
-    randsleep = random.uniform(1.0, 7.5)
+    randsleep = random.uniform(0.3, 3.5)
     print("Sleep for " + str(randsleep) + "\n")
     time.sleep(randsleep)

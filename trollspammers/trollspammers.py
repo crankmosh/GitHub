@@ -41,8 +41,10 @@ while True:
     headers = {'authority' : 'yourmom.com', 'method' : 'POST', 'path' : '', 'scheme' : 'https', 'accept' : '*/*', 'user-agent' : goodagent, 'x-requested-with' : 'XMLHttpRequest'} #if needed
 
     # POST that badboy
-    r = requests.post(url, data=obj, headers=headers)
-
+    try:
+       r = requests.post(url, data=obj, headers=headers)
+    except:
+       pass
     print("POST Request made.")
     print(r.status_code, r.reason)
     print("\n")
