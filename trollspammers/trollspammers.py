@@ -19,6 +19,7 @@ UAlist = ['Mozilla/5.0 (Windows NT 10.0; ber-MA; rv:1.9.2.20) Gecko/2020-02-03 1
 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X) AppleWebKit/534.1 (KHTML, like Gecko) FxiOS/11.8w7752.0 Mobile/31Z815 Safari/534.1',
 'Mozilla/5.0 (Windows NT 5.1; oc-FR; rv:1.9.1.20) Gecko/2020-07-28 13:55:27 Firefox/3.8']
 
+failc = 0
 
 # loop forever, or till we get a bad response
 while True:
@@ -45,9 +46,11 @@ while True:
        r = requests.post(url, data=obj, headers=headers)
     except:
        pass
+       failc += 1
+       
     print("POST Request made.")
     print(r.status_code, r.reason)
-    print("\n")
+    print("\nFails: " + failc + "\n")
     randsleep = random.uniform(0.3, 3.5)
     print("Sleep for " + str(randsleep) + "\n")
     time.sleep(randsleep)
